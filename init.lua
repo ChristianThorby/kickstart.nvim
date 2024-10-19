@@ -56,7 +56,8 @@ vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
-
+--
+-- Remap Ctrl-j and Ctrl-k for scrolling half a page down and up
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
@@ -94,6 +95,10 @@ vim.opt.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Remap Ctrl-j and Ctrl-k for scrolling in normal mode
+vim.keymap.set('n', '<C-j>', '<C-d>')
+vim.keymap.set('n', '<C-k>', '<C-u>')
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
