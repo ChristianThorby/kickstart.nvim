@@ -34,8 +34,6 @@ Kickstart Guide:
     which is very useful when you're not exactly sure of what you're looking for.
 
 If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
-CUSTOM
-
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -100,11 +98,14 @@ vim.opt.splitbelow = true
 vim.keymap.set('n', '<C-j>', '<C-d>')
 vim.keymap.set('n', '<C-k>', '<C-u>')
 
+-- only spaces, no tabs
+vim.opt.expandtab = true
+
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
