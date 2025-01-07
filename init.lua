@@ -123,6 +123,15 @@ vim.opt.scrolloff = 10
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Transparent background
+--vim.cmd [[
+--  highlight Normal guibg=none
+--  highlight NonText guibg=none
+--  highlight Normal ctermbg=none
+--  highlight NonText ctermbg=none
+--]]
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -888,5 +897,13 @@ require('lazy').setup({
   },
 })
 
+-- Makes nvim background transparent
+function Transparent(color)
+  color = color or 'tokyonight'
+  vim.cmd.colorscheme(color)
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+end
+Transparent()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
