@@ -143,6 +143,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- open nvim terminal in new tab
+-- https://gist.github.com/mahemoff/8967b5de067cffc67cec174cb3a9f49d
+-- TODO: find better keybinding here later
+-- vim.keymap.set('n', 'æ', ':tab term <CR>', { silent = true })
+-- vim.keymap.set('t', '<leader>T', '<C-w>:tab term ++close<CR>', { silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
