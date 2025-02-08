@@ -100,6 +100,8 @@ vim.keymap.set('n', '<C-k>', '<C-u>')
 
 -- only spaces, no tabs
 vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -549,17 +551,17 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
-        rust_analyzer = {
-          ['rust-analyzer'] = {
-            check = {
-              ignore = {
-                'dead_code',
-              },
-            },
-          },
-        },
+        -- rust_analyzer = {
+        --   ['rust-analyzer'] = {
+        --     check = {
+        --       ignore = {
+        --         'dead_code',
+        --       },
+        --     },
+        --   },
+        --  },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
